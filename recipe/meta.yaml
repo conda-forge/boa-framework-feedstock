@@ -33,7 +33,9 @@ requirements:
         - notebook >=5.3
         - ipywidgets >=7.5
         - ax-platform ==0.3.1
+        -  botorch ==0.8.3  # required for ax 0.3.1
         - gpytorch ==1.9.1  # required for botorch 0.8.3 which is required for ax 0.3.1
+        - linear-operator ==0.3.0  # required for botorch 0.8.3 which is required for ax 0.3.1
         - PyYAML
 
 
