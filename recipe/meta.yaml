@@ -1,5 +1,5 @@
 {% set name = "boa-framework" %}
-{% set version = "0.8.4" %}
+{% set version = "0.8.5" %}
 
 package:
     name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
     url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 3990675b0cc877c5570b29463693b9eea59d2133f6361b341f3ca67661abe59e
+    sha256: 2dc634b80136e0613d0213a04b561237e1f9f0a0c234d35b60e69d7709ddc9bc
 
 build:
     noarch: python
@@ -23,7 +23,6 @@ requirements:
     run:
         - python >=3.8
         - pytorch >=2.0
-        - botorch
         - numpy
         - pandas
         - scipy
@@ -34,6 +33,9 @@ requirements:
         - notebook >=5.3
         - ipywidgets >=7.5
         - ax-platform ==0.3.1
+        - botorch ==0.8.3  # required for ax 0.3.1
+        - gpytorch ==1.9.1  # required for botorch 0.8.3 which is required for ax 0.3.1
+        - linear-operator ==0.3.0  # required for botorch 0.8.3 which is required for ax 0.3.1
         - PyYAML
 
 
